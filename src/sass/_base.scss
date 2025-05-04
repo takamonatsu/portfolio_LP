@@ -1,3 +1,6 @@
+// ミックスインファイルのインポート
+@use 'mixins' as *;
+
 /* CSSリセット */
 /*! destyle.css v4.0.1 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 
@@ -37,6 +40,8 @@ html {
 
 body {
   margin: 0;
+  @include hide-scrollbar;
+  @include font-smoothing(antialiased);
 }
 
 /**

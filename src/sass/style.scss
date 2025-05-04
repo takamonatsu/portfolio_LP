@@ -2,7 +2,7 @@
 @use './variables' as vars;
 
 // ミックスインファイルのインポート
-@use './mixins';
+@use 'mixins' as *;
 
 // 基本スタイルのインポート
 @use './base';
@@ -23,6 +23,10 @@ body {
   background-color: vars.$white;
   line-height: 1.1;
 
+  main {
+    overflow: hidden;
+  }
+
   a {
     text-decoration: inherit;
   }
@@ -32,28 +36,18 @@ body {
     height: auto;
   }
 
-  .font-chonburi {
-    font-family: vars.$font-chonburi;
-  }
-
-  .fs-12 {
-    font-size: 12px;
-  }
+  span {
+    &.fs-14 {
+      font-size: 14px;
+    }
+    
+    &.fs-16 {
+      font-size: 16px;
+    }
   
-  .fs-14 {
-    font-size: 14px;
-  }
-  
-  .fs-16 {
-    font-size: 16px;
-  }
-
-  .fs-28 {
-    font-size: 28px;
-  }
-
-  .fs-32 {
-    font-size: 32px;
+    &.fs-28 {
+      font-size: 28px;
+    }
   }
 
   .logo {
@@ -61,6 +55,7 @@ body {
     position: relative;
     padding: 5px 25px;
     font-size: 20px;
+    font-family: vars.$font-chonburi;
     color: vars.$brown;
     border: 1px solid vars.$brown;
     border-radius: 4px;
@@ -68,101 +63,147 @@ body {
   }
 
   .follow-logo {
+    display: none;
     position: fixed;
     top: 20%;
     right: 25px;
     font-size: 40px;
+
+    @include mq(pc) {
+      display: block;
+    }
   }
+
 }
 
 .mv {
-  padding-top: 20px;
+  width: 100%;
   position: relative;
   background-color: vars.$bg-pink;
   z-index: 10;
 
+  @include mq(pc) {
+    padding-top: 20px;
+  }
+
   &__inner {
-    width: calc(100% - 40px);
-    height: 800px;
-    padding: 30px;
+    height: 1020px;
+    padding-top: 30px;
     position: relative;
-    margin: 0 auto;
+    font-family: vars.$font-chonburi;
     color: transparent;
     background-color: vars.$bg-mv;
     box-shadow: 20px 20px 16px vars.$shadow-color;
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      z-index: 1;
-    }
-
-    &::before {
-      width: 367px;
-      height: 231px;
-      top: 0;
-      left: 0;
-      background-image: url(../assets/images/vector-pink.png);
-    }
-
-    &::after {
-      width: 675px;
-      height: 330px;
-      bottom: 0;
-      right: 0;
-      background-image: url(../assets/images/vector-yellow.png);
+    @include mq(pc) {
+      width: calc(100% - 40px);
+      height: 800px;
+      padding: 30px;
+      margin: 0 auto;
     }
   }
 
-  &__ttl {
+  &::after {
+    @include mq(pc) {
+      content: "";
+      width: 675px;
+      height: 330px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-image: url(../assets/images/vector-yellow.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 367px;
+    height: 231px;
     position: absolute;
-    bottom: -150px;
-    right: -370px;
-    font-size: 94px;
-    background-image: url(../assets/images/mv_ttl.png);
-    background-size: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../assets/images/vector-pink.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  &__ttl {
+    width: 339px;
+    height: 188px;
+    margin: 165px auto 0;
+    font-size: 80px;
+    background-image: url(../assets/images/mv_ttl_sp.png);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    letter-spacing: -2.82px;
     z-index: 10;
+
+    @include mq(pc) {
+      width: auto;
+      position: absolute;
+      bottom: -190px;
+      right: -370px;
+      font-size: 94px;
+      background-image: url(../assets/images/mv_ttl_pc.png);
+      letter-spacing: -2.82px;
+    }
   }
 
   &__txt {
     display: inline-block;
     position: absolute;
-    top: 98px;
-    left: -55px;
+    top: -60px;
+    left: 0;
     font-size: 40px;
     letter-spacing: -1.2px;
     background-image: url(../assets/images/mv_txt.png);
-    background-size: 100%;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    transform: translate(1rem, -2rem) rotate(90deg);
-    transform-origin: left;
+    z-index: 10;
+
+    @include mq(pc) {
+      top: 98px;
+      left: -55px;
+      transform: translate(1rem, -2rem) rotate(90deg);
+      transform-origin: left;
+    }
   }
 
   &__center {
-    width: 420px;
-    height: 570px;
+    width: 345px;
+    height: 468px;
     margin: 0 auto;
     position: relative;
+    transform: translateX(-5px);
     z-index: 10;
+
+    @include mq(pc) {
+      width: 420px;
+      height: 570px;
+      transform: translate(0);
+    }
 
     &::before,
     &::after {
       content: "";
       position: absolute;
+
+      @include mq(pc) {
+        top: 18px;
+        left: 18px;
+      }
     }
 
     &::before {
       width: 100%;
       height: 100%;
-      top: 18px;
-      left: 18px;
+      top: 11px;
+      left: 11px;
       border-radius: 100px 0 0 0;
       background-color: vars.$bg-pink;
       z-index: 10;
@@ -172,21 +213,31 @@ body {
       width: 41px;
       height: 88px;
       top: -16px;
-      right: 37px;
+      right: 13px;
       background-image: url(../assets/images/clip.png);
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
       z-index: 10;
+
+      @include mq(pc) {
+        right: 37px;
+      }
     }
   }
 
-  &__main-photo { 
+  &__main-photo{
     width: 100%;
-    height: 570px;
+    height: 468px;
+    margin-top: 90px;
     position: relative;
     border-radius: 100px 0 0 0;
     overflow: hidden;
+
+    @include mq(pc) {
+      height: 570px;
+      margin-top: 0;
+    }
 
     img {
       position: relative;
@@ -195,37 +246,58 @@ body {
   }
 
   &__cutout-photos {
-    width: 905px;
-    height: 656px;
+    width: 484px;
+    height: 330px;
     position: absolute;
-    top: -14px;
-    left: -321px;
+    top: 287px;
+    left: -67px;
 
-    &--01,
-    &--02,
-    &--03 {
-      position: absolute;
-      z-index: 15;
+    @include mq(pc) {
+      width: 905px;
+      height: 656px;
+      top: -14px;
+      left: -321px;
     }
 
     &--01 {
       width: 196px;
-      bottom: 90px;
-      left: 29px;
+      position: absolute;
+      bottom: 15px;
+      left: 17px;
+      z-index: 15;
+
+      @include mq(pc) {
+        bottom: 90px;
+        left: 29px;
+      }
     }
 
     &--02 {
       width: 208px;
-      bottom: 22px;
-      left: 120px;
+      position: absolute;
+      bottom: 30px;
+      left: 264px;
+      transform: rotate(6deg);
+      z-index: 15;
 
+      @include mq(pc) {
+        bottom: 22px;
+        left: 120px;
+        transform: rotate(0);
+      }
     }
 
     &--03 {
-      width: 233px;
-      top: -18px;
-      right: 16px;
+      display: none;
 
+      @include mq(pc) {
+        width: 233px;
+        display: block;
+        position: absolute;
+        top: -18px;
+        right: 16px;
+        z-index: 15;
+      }
     }
   }
 
@@ -233,53 +305,71 @@ body {
     &--handwritten {
       &::before,
       &::after {
-        content: "";
-        position: absolute;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+        @include mq(pc) {
+          content: "";
+          position: absolute;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
       }
+
       &::before {
-        width: 54px;
-        height: 83px;
-        top: 270px;
-        left: 40px;
-        background-image: url(../assets/images/handwritten-sparkling.png);
+        @include mq(pc) {
+          width: 54px;
+          height: 83px;
+          top: 270px;
+          left: 40px;
+          background-image: url(../assets/images/handwritten-sparkling.png);
+        }
       }
+
       &::after {
-        width: 59px;
-        height: 48px;
-        top: 10px;
-        right: 10px;
-        background-image: url(../assets/images/handwritten-arrow.png);
+        @include mq(pc) {
+          width: 59px;
+          height: 48px;
+          top: 10px;
+          right: 10px;
+          background-image: url(../assets/images/handwritten-arrow.png);
+        }
       }
     }
-
     &--perpar {
-      &::before,
-      &::after {
+      &::before {
         content: "";
+        width: 378px;
+        height: 364px;
         position: absolute;
+        bottom: -66px;
+        left: 25px;
+        background-image: url(../assets/images/mv_perpar-left.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         z-index: 0;
-      }
 
-      &::before {
-        width: 410px;
-        height: 328px;
-        bottom: -47px;
-        left: -21px;
-        background-image: url(../assets/images/mv_perpar-left.png);
+        @include mq(pc) {
+          width: 410px;
+          height: 328px;
+          bottom: -47px;
+          left: -21px;
+        }
       }
 
       &::after {
-        width: 346px;
-        height: 332px;
-        top: 108px;
-        right: -40px;
-        background-image: url(../assets/images/mv_perpar-right.png);
+        @include mq(pc) {
+          content: "";
+          width: 346px;
+          height: 332px;
+          position: absolute;
+          top: 108px;
+          right: -40px;
+          background-image: url(../assets/images/mv_perpar-right.png);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          z-index: 0;
+        }
       }
     }
   }
@@ -334,6 +424,8 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
+    font-size: 16px;
+    font-family: vars.$font-chonburi;
     background-image: url(../assets/images/bg-batch.png);
     background-size: 85px;
     background-position: center;
@@ -364,6 +456,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 12px;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -395,7 +488,13 @@ body {
   width: 100%;
   max-width: 375px;
   margin: 100px auto 0;
+  display: block;
   text-align: center;
+
+  &__scroll-txt {
+    font-size: 16px;
+    font-family: vars.$font-chonburi;
+  }
 
   &__scroll-arrow {
     width: 30px;
@@ -405,15 +504,17 @@ body {
   &__index {
     margin-top: 150px;
     color: vars.$main-color;
+  }
 
-    p + p {
-      margin-top: 60px;
-    }
+  &__ttl {
+    font-size: 32px;
+    line-height: 1.8;
+    text-shadow: 2px 2px 2px vars.$shadow-color;
   }
 
   &__txt {
-    line-height: 1.8;
-    text-shadow: 2px 2px 2px vars.$shadow-color;
+    margin-top: 60px;
+    font-size: 16px;
   }
 }
 
@@ -464,6 +565,7 @@ body {
     width: 2360px;
     display: flex;
     font-size: 68px;
+    font-family: vars.$font-chonburi;
     color: vars.$second-color;
     gap: 50px;
     letter-spacing: -1.5px;
@@ -507,11 +609,11 @@ body {
     align-items: center;
     position: absolute;
     font-size: 22px;
+    font-family: vars.$font-chonburi;
     background-image: url(../assets/images/bg-batch_collection.png);
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: vars.$font-chonburi;
 
     &--01 {
       top: -36px;
@@ -643,12 +745,21 @@ body {
       left: 0;
     }
 
-    h3,
-    p {
-      margin-top: 10px;
-      position: relative;
-      z-index: 10;
-    }
+  }
+
+  &__about-ttl,
+  &__about-txt {
+    margin-top: 10px;
+    position: relative;
+    z-index: 10;
+  }
+
+  &__about-ttl {
+    font-size: 16px;
+  }
+
+  &__about-txt {
+    font-size: 14px;
   }
 
   &__detail {
@@ -742,8 +853,11 @@ body {
     &.column {
       flex-direction: column;
       gap: 5px;
-      text-align: end;
       white-space: nowrap;
+
+      .product-price {
+        text-align: right;
+      }
     }
   }
 
@@ -752,10 +866,10 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
+    font-family: vars.$font-chonburi;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: vars.$font-chonburi;
     cursor: pointer;
 
     &--01 {
@@ -770,7 +884,7 @@ body {
     &--02 {
       width: 154px;
       height: 120px;
-      padding-bottom: 0;
+      padding-right: 5px;
       bottom: -50px;
       right: 13px;
       background-image: url(../assets/images/blobs-02.png);
@@ -779,7 +893,7 @@ body {
     &--03 {
       width: 161px;
       height: 116px;
-      padding-bottom: 0;
+      padding-bottom: 5px;
       bottom: -33px;
       right: 0px;
       background-image: url(../assets/images/blobs-03.png);
@@ -788,7 +902,7 @@ body {
     &--04 {
       width: 164px;
       height: 116px;
-      padding-bottom: 0;
+      padding: 0 5px 5px 0;
       bottom: -55px;
       right: 20px;
       background-image: url(../assets/images/blobs-04.png);
@@ -797,7 +911,7 @@ body {
     &--05 {
       width: 154px;
       height: 122px;
-      padding-bottom: 0;
+      padding-bottom: 5px;
       bottom: -50px;
       right: -26px;
       background-image: url(../assets/images/blobs-05.png);
@@ -806,7 +920,7 @@ body {
     &--06 {
       width: 164px;
       height: 126px;
-      padding-bottom: 0;
+      padding-bottom: 10px;
       bottom: -52px;
       right: -20px;
       background-image: url(../assets/images/blobs-06.png);
@@ -831,17 +945,27 @@ body {
   }
 
   &__ttl {
+    width: 270px;
     font-size: 24px;
+    font-family: vars.$font-chonburi;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  &__frame {
+    width: 1010px;
+    overflow-x: scroll;
+    overflow-y: hidden;
   }
 
   &__list {
-    width: 1010px;
     display: flex;
   }
 
   &__item {
     width: 190px;
     padding: 0 20px;
+    flex-shrink: 0;
 
     * + * {
       margin-top: 10px;

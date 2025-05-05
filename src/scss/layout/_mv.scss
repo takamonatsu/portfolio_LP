@@ -1,8 +1,8 @@
 // 変数ファイルのインポート
-@use '/src/sass/variables' as vars;
+@use '../foundation/variables' as vars;
 
 // ミックスインファイルのインポート
-@use '/src/sass/mixins' as *;
+@use '../foundation/mixins' as *;
 
 .mv {
     width: 100%;
@@ -39,7 +39,7 @@
             position: absolute;
             bottom: 0;
             right: 20px;
-            background-image: url(../assets/images/vector-yellow.png);
+            background-image: url(/src/assets/images/vector-yellow.png);
             background-size: contain;
             background-repeat: no-repeat;
             z-index: 1;
@@ -53,7 +53,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background-image: url(../assets/images/vector-pink.png);
+        background-image: url(/src/assets/images/vector-pink.png);
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 1;
@@ -64,7 +64,7 @@
         height: 188px;
         margin: 165px auto 0;
         font-size: 80px;
-        background-image: url(../assets/images/mv_ttl_sp.png);
+        background-image: url(/src/assets/images/mv_ttl_sp.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -76,7 +76,7 @@
             bottom: -190px;
             right: -370px;
             font-size: 94px;
-            background-image: url(../assets/images/mv_ttl_pc.png);
+            background-image: url(/src/assets/images/mv_ttl_pc.png);
             letter-spacing: -2.82px;
         }
     }
@@ -88,7 +88,7 @@
         left: 0;
         font-size: 40px;
         letter-spacing: -1.2px;
-        background-image: url(../assets/images/mv_txt.png);
+        background-image: url(/src/assets/images/mv_txt.png);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -142,7 +142,7 @@
             height: 88px;
             top: -16px;
             right: 13px;
-            background-image: url(../assets/images/clip.png);
+            background-image: url(/src/assets/images/clip.png);
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -250,7 +250,7 @@
                     height: 83px;
                     top: 270px;
                     left: 40px;
-                    background-image: url(../assets/images/handwritten-sparkling.png);
+                    background-image: url(/src/assets/images/handwritten-sparkling.png);
                 }
             }
 
@@ -260,7 +260,7 @@
                     height: 48px;
                     top: 10px;
                     right: 10px;
-                    background-image: url(../assets/images/handwritten-arrow.png);
+                    background-image: url(/src/assets/images/handwritten-arrow.png);
                 }
             }
         }
@@ -273,7 +273,7 @@
                 position: absolute;
                 bottom: -66px;
                 left: 25px;
-                background-image: url(../assets/images/mv_perpar-left.png);
+                background-image: url(/src/assets/images/mv_perpar-left.png);
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -295,7 +295,7 @@
                     position: absolute;
                     top: 108px;
                     right: -40px;
-                    background-image: url(../assets/images/mv_perpar-right.png);
+                    background-image: url(/src/assets/images/mv_perpar-right.png);
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;

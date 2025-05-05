@@ -1,5 +1,5 @@
 // ミックスインファイルのインポート
-@use '/src/sass/mixins' as *;
+@use '../foundation/mixins' as *;
 
 body .logo.follow-logo {
     display: none;

@@ -1,8 +1,8 @@
 // 変数ファイルのインポート
-@use '/src/sass/variables' as vars;
+@use '../foundation/variables' as vars;
 
 // ミックスインファイルのインポート
-@use '/src/sass/mixins' as *;
+@use '../foundation/mixins' as *;
 
 .campaign {
     padding: 100px 0;
@@ -19,7 +19,7 @@
             left: 0;
             right: 0;
             bottom: -50px;
-            background-image: url(../assets/images/bg-paper-bottom.png);
+            background-image: url(/src/assets/images/bg-paper-bottom.png);
             background-size: 600px;
             background-position: bottom;
             background-repeat: repeat-x;
@@ -55,7 +55,7 @@
         position: absolute;
         font-size: 16px;
         font-family: vars.$font-chonburi;
-        background-image: url(../assets/images/bg-batch.png);
+        background-image: url(/src/assets/images/bg-batch.png);
         background-size: 85px;
         background-position: center;
         background-repeat: no-repeat;
@@ -92,12 +92,12 @@
 
         &.is-top {
             color: vars.$main-color;
-            background-image: url(../assets/images/speech-bubble_white.png);
+            background-image: url(/src/assets/images/speech-bubble_white.png);
         }
 
         &.is-bottom {
             color: vars.$white;
-            background-image: url(../assets/images/speech-bubble_pink.png);
+            background-image: url(/src/assets/images/speech-bubble_pink.png);
         }
     }
 

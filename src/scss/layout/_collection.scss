@@ -1,8 +1,8 @@
 // 変数ファイルのインポート
-@use '/src/sass/variables' as vars;
+@use '../foundation/variables' as vars;
 
 // ミックスインファイルのインポート
-@use '/src/sass/mixins' as *;
+@use '../foundation/mixins' as *;
 
 .collection {
     margin-top: 200px;
@@ -25,13 +25,13 @@
 
     &::before {
         top: -70px;
-        background-image: url(../assets/images/bg-paper-top.png);
+        background-image: url(/src/assets/images/bg-paper-top.png);
         background-position: top;
     }
 
     &::after {
         bottom: -50px;
-        background-image: url(../assets/images/bg-paper-bottom.png);
+        background-image: url(/src/assets/images/bg-paper-bottom.png);
         background-position: bottom;
     }
 
@@ -80,7 +80,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background-image: url(../assets/images/note-ring.png);
+            background-image: url(/src/assets/images/note-ring.png);
             background-size: auto 20px;
             background-position: left -7px center;
             background-repeat: repeat-x;
@@ -100,7 +100,7 @@
         position: absolute;
         font-size: 22px;
         font-family: vars.$font-chonburi;
-        background-image: url(../assets/images/bg-batch_collection.png);
+        background-image: url(/src/assets/images/bg-batch_collection.png);
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -404,7 +404,7 @@
             padding-bottom: 13px;
             bottom: 35px;
             right: 30px;
-            background-image: url(../assets/images/blobs-01.png);
+            background-image: url(/src/assets/images/blobs-01.png);
         }
 
         &--02 {
@@ -413,7 +413,7 @@
             padding-right: 5px;
             bottom: -50px;
             right: 13px;
-            background-image: url(../assets/images/blobs-02.png);
+            background-image: url(/src/assets/images/blobs-02.png);
         }
 
         &--03 {
@@ -422,7 +422,7 @@
             padding-bottom: 5px;
             bottom: -33px;
             right: 0px;
-            background-image: url(../assets/images/blobs-03.png);
+            background-image: url(/src/assets/images/blobs-03.png);
         }
 
         &--04 {
@@ -431,7 +431,7 @@
             padding: 0 5px 5px 0;
             bottom: -55px;
             right: 20px;
-            background-image: url(../assets/images/blobs-04.png);
+            background-image: url(/src/assets/images/blobs-04.png);
         }
 
         &--05 {
@@ -440,7 +440,7 @@
             padding-bottom: 5px;
             bottom: -50px;
             right: -26px;
-            background-image: url(../assets/images/blobs-05.png);
+            background-image: url(/src/assets/images/blobs-05.png);
         }
 
         &--06 {
@@ -449,7 +449,7 @@
             padding-bottom: 10px;
             bottom: -52px;
             right: -20px;
-            background-image: url(../assets/images/blobs-06.png);
+            background-image: url(/src/assets/images/blobs-06.png);
         }
     }
 }

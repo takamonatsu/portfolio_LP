@@ -1,8 +1,8 @@
 // 変数ファイルのインポート
-@use '/src/sass/variables' as vars;
+@use '../foundation/variables' as vars;
 
 // ミックスインファイルのインポート
-@use '/src/sass/mixins' as *;
+@use '../foundation/mixins' as *;
 
 .products {
     padding: 35px 0;

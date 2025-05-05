@@ -7,6 +7,9 @@
 // 基本スタイルのインポート
 @use './base';
 
+// 追従ボタンスタイルのインポート
+@use '../scss/object/component/follow';
+
 
 @font-face {
   font-family: 'Chonburi';
@@ -61,19 +64,6 @@ body {
     border-radius: 4px;
     z-index: 10;
   }
-
-  .follow-logo {
-    display: none;
-    position: fixed;
-    top: 20%;
-    right: 25px;
-    font-size: 40px;
-
-    @include mq(pc) {
-      display: block;
-    }
-  }
-
 }
 
 .mv {
@@ -110,7 +100,7 @@ body {
       height: 330px;
       position: absolute;
       bottom: 0;
-      right: 0;
+      right: 20px;
       background-image: url(../assets/images/vector-yellow.png);
       background-size: contain;
       background-repeat: no-repeat;

@@ -1,0 +1,23 @@
+// ミックスインファイルのインポート
+@use '/src/sass/mixins' as *;
+
+body .logo.follow-logo {
+    display: none;
+    position: fixed;
+    top: 20%;
+    right: 25px;
+    font-size: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+
+    &.is-show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @include mq(pc) {
+        display: block;
+    }
+} 

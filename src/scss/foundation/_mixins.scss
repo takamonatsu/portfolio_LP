@@ -1,0 +1,27 @@
+@use "sass:map";
+
+// ブレークポイントの定義
+$breakpoints: (
+    "pc": "screen and (min-width: 1280px)"
+);
+
+// メディアクエリのミックスイン
+@mixin mq($breakpoint) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin font-smoothing($font-smoothing) {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothings: grayscale;
+    font-smoothing: $font-smoothing;
+}
+
+@mixin hide-scrollbar {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

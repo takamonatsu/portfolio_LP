@@ -1,7 +1,20 @@
-import { initScroll } from './scroll';
+import { handleScroll } from './handleScroll';
+import { handlePhotos } from './handlePhotos';
+import { dummyLinkHandler } from './dummyLinkHandler';
+import { handleLoading } from './handleLoading';
+import { handleRotation } from './handleRotation';
 
 // DOMContentLoadedイベントで初期化
 document.addEventListener('DOMContentLoaded', () => {
+    handleLoading(() => {
+        handleRotation();
+    });
+    dummyLinkHandler();
+    handlePhotos();
+    
     // スクロール処理の初期化
-    initScroll();
+    // 画面途中でリロードすると、画面上部で Observer が実行された後に本来の表示位置へ移動してしまうため、遅延させて実行
+    setTimeout(() => {
+        handleScroll();
+    }, 1000);
 }); 

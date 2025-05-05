@@ -10,7 +10,14 @@
     <script type="module" src="./src/main.js"></script>
 </head>
 
-<body>
+<body style="opacity: 0; overflow: hidden;">
+    <div class="loading">
+        <div class="loading__inner">
+            <p class="logo loading__logo">LUMINA&nbsp;MODE</p>
+            <div class="loading__spinner"></div>
+        </div>
+    </div>
+
     <main>
         <div class="mv">
             <div class="mv__inner">
@@ -24,9 +31,9 @@
                         <span class="mv__cutout-deco--handwritten"></span>
                         <span class="mv__cutout-deco--perpar"></span>
                         <span class="mv__cutout-deco"></span>
-                        <img class="mv__cutout-photos--01" src="/images/mv_full-shot-girl-posing-with-glasses-ice-cream.png" alt="「アクティブ × フェミニンデニム」のカットアウト写真">
-                        <img class="mv__cutout-photos--02" src="/images/mv_front-view-woman-holding-delicious-cocktail.png" alt="ボーイッシュ × シティルック」のカットアウト写真">
-                        <img class="mv__cutout-photos--03" src="/images/mv_young-pretty-girl-with-two-braids-leather-jacket-skirt-with-black-backpack-shoulder-while-dreamily-looking-aside-beige-background.png" alt="90's ミックス × ストリートガール」のカットアウト写真">
+                        <img class="mv__cutout-photo mv__cutout-photo--01" src="/images/mv_full-shot-girl-posing-with-glasses-ice-cream.png" alt="「アクティブ × フェミニンデニム」のカットアウト写真">
+                        <img class="mv__cutout-photo mv__cutout-photo--02" src="/images/mv_front-view-woman-holding-delicious-cocktail.png" alt="ボーイッシュ × シティルック」のカットアウト写真">
+                        <img class="mv__cutout-photo mv__cutout-photo--03" src="/images/mv_young-pretty-girl-with-two-braids-leather-jacket-skirt-with-black-backpack-shoulder-while-dreamily-looking-aside-beige-background.png" alt="90's ミックス × ストリートガール」のカットアウト写真">
                     </div>
                     <h1 class="mv__ttl">Spring&nbsp;Refresh</h1>
                 </div>
@@ -84,10 +91,10 @@
                         <p class="collection__num collection__num--01">No.1</p>
                         <div class="collection__contents">
                             <div class="collection__main-photos">
-                                <div class="collection__photo-frame is-show">
+                                <div class="collection__photo-frame is-show is-default">
                                     <img class="collection__main-photo" src="/images/medium-shot-beautiful-girl-posing.jpg" alt="">
                                 </div>
-                                <div class="collection__photo-frame is-next">
+                                <div class="collection__photo-frame is-next is-default">
                                     <img class="collection__main-photo" src="/images/full-shot-girl-posing-chair-with-hat.jpg" alt="">
                                 </div>
                             </div>
@@ -104,7 +111,7 @@
                                     <li class="collection__detail-item"><span>リブトップス</span><span>¥5,500</span></li>
                                     <li class="collection__detail-item"><span>リネンパンツ</span><span>¥8,200</span></li>
                                 </ul>
-                                <p class="collection__check-btn collection__check-btn--01">CHECK&nbsp;ME!!</p>
+                                <p class="collection__check-btn collection__check-btn--01"><a href="#">CHECK&nbsp;ME!!</a></p>
                             </div>
                         </div>
                     </li>
@@ -129,7 +136,7 @@
                                     <li class="collection__detail-item"><span>リブショートパンツ</span><span>¥6,900</span></li>
                                     <li class="collection__detail-item column"><span>ホワイトキャンバススニーカー</span><span class="product-price">¥6,000</span></li>
                                 </ul>
-                                <p class="collection__check-btn collection__check-btn--02">CHECK&nbsp;ME!!</p>
+                                <p class="collection__check-btn collection__check-btn--02"><a href="#">CHECK&nbsp;ME!!</a></p>
                             </div>
                         </div>
                     </li>
@@ -137,10 +144,10 @@
                         <p class="collection__num collection__num--03">No.3</p>
                         <div class="collection__contents">
                             <div class="collection__main-photos">
-                                <div class="collection__photo-frame is-show">
+                                <div class="collection__photo-frame is-show is-default">
                                     <img class="collection__main-photo" src="/images/front-view-woman-holding-delicious-cocktail.jpg" alt="">
                                 </div>
-                                <div class="collection__photo-frame is-next">
+                                <div class="collection__photo-frame is-next is-default">
                                     <img class="collection__main-photo" src="/images/woman-drinking-delicious-cocktail.jpg" alt="">
                                 </div>
                             </div>
@@ -157,7 +164,7 @@
                                     <li class="collection__detail-item"><span>ウールジャケット</span><span>¥14,800</span></li>
                                     <li class="collection__detail-item"><span>ワイドデニム</span><span>¥9,200</span></li>
                                 </ul>
-                                <p class="collection__check-btn collection__check-btn--03">CHECK&nbsp;ME!!</p>
+                                <p class="collection__check-btn collection__check-btn--03"><a href="#">CHECK&nbsp;ME!!</a></p>
                             </div>
                         </div>
                     </li>
@@ -165,14 +172,11 @@
                         <p class="collection__num collection__num--04">No.4</p>
                         <div class="collection__contents">
                             <div class="collection__main-photos">
-                                <div class="collection__photo-frame is-show">
+                                <div class="collection__photo-frame is-show is-default">
                                     <img class="collection__main-photo" src="/images/young-attractive-girl-with-two-braids-tweed-jumpsuit-with-black-backpack-shoulder-thoughtfully-looking-camera-beige-background-isolated.jpg" alt="">
                                 </div>
-                                <div class="collection__photo-frame is-next">
+                                <div class="collection__photo-frame is-next is-default">
                                     <img class="collection__main-photo" src="/images/young-attractive-girl-with-two-braids-tweed-jumpsuit-long-black-socks-holding-black-backpack-shoulder-thoughtfully-looking-aside-beige-background-isolated.jpg" alt="">
-                                </div>
-                                <div class="collection__photo-frame">
-                                    <img class="collection__main-photo" src="/images/young-beautiful-smiling-girl-with-two-braids-tweed-jumpsuit-holding-black-backpack-shoulder-happily-looking-camera-while-spending-time-beige-background.jpg" alt="">
                                 </div>
                             </div>
                             <p class="collection__freepik-link">Designed&nbsp;by&nbsp;<a href="" target="_blank">Freepik</a></p>
@@ -188,7 +192,7 @@
                                     <li class="collection__detail-item"><span>スクールレザーバッグ</span><span>¥8,800</span></li>
                                     <li class="collection__detail-item"><span>ロングブーツ</span><span>¥6,500</span></li>
                                 </ul>
-                                <p class="collection__check-btn collection__check-btn--04">CHECK&nbsp;ME!!</p>
+                                <p class="collection__check-btn collection__check-btn--04"><a href="#">CHECK&nbsp;ME!!</a></p>
                             </div>
                         </div>
                     </li>
@@ -196,16 +200,10 @@
                         <p class="collection__num collection__num--05">No.5</p>
                         <div class="collection__contents">
                             <div class="collection__main-photos">
-                                <div class="collection__photo-frame is-show">
+                                <div class="collection__photo-frame is-show is-default">
                                     <img class="collection__main-photo" src="/images/young-pretty-girl-with-two-braids-leather-jacket-skirt-with-black-backpack-shoulder-while-dreamily-looking-aside-beige-background.jpg" alt="">
                                 </div>
-                                <div class="collection__photo-frame is-next">
-                                    <img class="collection__main-photo" src="/images/young-beautiful-smiling-girl-with-two-braids-leather-jacket-skirt-with-black-backpack-shoulder-while-happily-looking-camera-beige-background.jpg" alt="">
-                                </div>
-                                <div class="collection__photo-frame">
-                                    <img class="collection__main-photo" src="/images/young-pretty-girl-with-two-braids-leather-jacket-skirt-with-black-backpack-shoulder-happily-dancing-while-spending-time-beige-background.jpg" alt="">
-                                </div>
-                                <div class="collection__photo-frame">
+                                <div class="collection__photo-frame is-next is-default">
                                     <img class="collection__main-photo" src="/images/young-beautiful-smiling-girl-with-two-braids-leather-jacket-skirt-dreamily-looking-aside-beige-background-isolated.jpg" alt="">
                                 </div>
                             </div>
@@ -222,7 +220,7 @@
                                     <li class="collection__detail-item"><span>プリーツスカート</span><span>¥6,800</span></li>
                                     <li class="collection__detail-item"><span>ニーハイソックス</span><span>¥1,500</span></li>
                                 </ul>
-                                <p class="collection__check-btn collection__check-btn--05">CHECK&nbsp;ME!!</p>
+                                <p class="collection__check-btn collection__check-btn--05"><a href="#">CHECK&nbsp;ME!!</a></p>
                             </div>
                         </div>
                     </li>
@@ -230,20 +228,11 @@
                         <p class="collection__num collection__num--06">No.6</p>
                         <div class="collection__contents">
                             <div class="collection__main-photos">
-                                <div class="collection__photo-frame is-show">
+                                <div class="collection__photo-frame is-show is-default">
                                     <img class="collection__main-photo" src="/images/portrait-beautiful-asian-woman-autumn-clothes.jpg" alt="">
                                 </div>
-                                <div class="collection__photo-frame is-next">
+                                <div class="collection__photo-frame is-next is-default">
                                     <img class="collection__main-photo" src="/images/portrait-young-asian-woman-autumn-clothes.jpg" alt="">
-                                </div>
-                                <div class="collection__photo-frame">
-                                    <img class="collection__main-photo" src="/images/portrait-beautiful-asian-woman-autumn-clothes3.jpg" alt="">
-                                </div>
-                                <div class="collection__photo-frame">
-                                    <img class="collection__main-photo" src="/images/portrait-beautiful-asian-woman-autumn-clothes2.jpg" alt="">
-                                </div>
-                                <div class="collection__photo-frame">
-                                    <img class="collection__main-photo" src="/images/portrait-beautiful-asian-woman-autumn-clothes1.jpg" alt="">
                                 </div>
                             </div>
                             <p class="collection__freepik-link">Designed&nbsp;by&nbsp;<a href="" target="_blank">Freepik</a></p>
@@ -259,7 +248,7 @@
                                     <li class="collection__detail-item"><span>プリーツジャンスカ</span><span>¥10,200</span></li>
                                     <li class="collection__detail-item"><span>プリーツブーツ</span><span>¥7,200</span></li>
                                 </ul>
-                                <p class="collection__check-btn collection__check-btn--06">CHECK&nbsp;ME!!</p>
+                                <p class="collection__check-btn collection__check-btn--06"><a href="#">CHECK&nbsp;ME!!</a></p>
                             </div>
                         </div>
                     </li>

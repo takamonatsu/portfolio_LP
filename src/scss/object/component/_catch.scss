@@ -1,0 +1,39 @@
+// 変数ファイルのインポート
+@use '/src/sass/variables' as vars;
+
+// ミックスインファイルのインポート
+@use '/src/sass/mixins' as *;
+
+.catch {
+    width: 100%;
+    max-width: 375px;
+    margin: 100px auto 0;
+    display: block;
+    text-align: center;
+
+    &__scroll-txt {
+        font-size: 16px;
+        font-family: vars.$font-chonburi;
+    }
+
+    &__scroll-arrow {
+        width: 30px;
+        margin-top: 15px;
+    }
+
+    &__index {
+        margin-top: 150px;
+        color: vars.$main-color;
+    }
+
+    &__ttl {
+        font-size: 32px;
+        line-height: 1.8;
+        text-shadow: 2px 2px 2px vars.$shadow-color;
+    }
+
+    &__txt {
+        margin-top: 60px;
+        font-size: 16px;
+    }
+}

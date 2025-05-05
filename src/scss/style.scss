@@ -1,0 +1,22 @@
+// ミックスインファイルのインポート
+@use '/src/sass/mixins' as *;
+
+// コンポーネントのインポート
+@use 'object/component/follow';
+@use 'object/component/mv';
+@use 'object/component/campaign';
+@use 'object/component/catch';
+@use 'object/component/collection';
+@use 'object/component/products';
+
+// ベーススタイル
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+// ユーティリティクラス
+.fs-14 { font-size: 14px; }
+.fs-16 { font-size: 16px; }
+.fs-28 { font-size: 28px; } 

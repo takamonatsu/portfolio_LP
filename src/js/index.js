@@ -1,7 +1,7 @@
 import { handleScroll } from './handleScroll';
 import { handlePhotos } from './handlePhotos';
 import { dummyLinkHandler } from './dummyLinkHandler';
-import { handleLoading } from './loading';
+import { handleLoading } from './handleLoading';
 
 // DOMContentLoadedイベントで初期化
 document.addEventListener('DOMContentLoaded', () => {

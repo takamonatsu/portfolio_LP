@@ -22,7 +22,6 @@ export const initScroll = () => {
                 // 'top_target'が画面より上に存在する場合：true
                 boolObj.top_target = isAboveViewport;
             } else if (entry.target.dataset.id === "bottom_target") {
-                console.log(entry.boundingClientRect.top);
                 // 'bottom_target'が表示されている または 画面より上に存在する場合：true
                 boolObj.bottom_target = !isVisible && isAboveViewport;
             }
@@ -39,8 +38,3 @@ export const initScroll = () => {
     // 追従ボタンの表示・非表示を切り替える位置をobserverで監視する
     [topTarget, bottomTarget].forEach((target) => observer.observe(target));
 };
-
-// 画面途中でリロードすると、画面上部で Observer が実行された後に本来の表示位置へ移動してしまうため、遅延させて実行
-setTimeout(function () {
-    initScroll();
-}, 1000);

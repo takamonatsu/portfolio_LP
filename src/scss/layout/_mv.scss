@@ -146,6 +146,10 @@
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: all 1s ease;
+            transition-delay: 2.5s;
             z-index: 10;
 
             @include mq(pc) {
@@ -162,6 +166,11 @@
         position: relative;
         border-radius: 100px 0 0 0;
         overflow: hidden;
+        opacity: 0;
+        transform: translate(-50px, 20px);
+        transition-delay: 2.5s;
+        transition: all 0.6s ease;
+        z-index: 10;
 
         @include mq(pc) {
             height: 570px;
@@ -187,13 +196,20 @@
             top: -14px;
             left: -321px;
         }
+    }
+
+    &__cutout-photo {
+        height: auto;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        z-index: 15;
 
         &--01 {
             width: 196px;
-            position: absolute;
             bottom: 15px;
             left: 17px;
-            z-index: 15;
+            transition-delay: 1s;
 
             @include mq(pc) {
                 bottom: 90px;
@@ -203,11 +219,11 @@
 
         &--02 {
             width: 208px;
-            position: absolute;
             bottom: 30px;
             left: 264px;
             transform: rotate(6deg);
-            z-index: 15;
+            transition-delay: 1.5s;
+
 
             @include mq(pc) {
                 bottom: 22px;
@@ -218,14 +234,13 @@
 
         &--03 {
             display: none;
+            transition-delay: 1s;
 
             @include mq(pc) {
                 width: 233px;
                 display: block;
-                position: absolute;
                 top: -18px;
                 right: 16px;
-                z-index: 15;
             }
         }
     }
@@ -303,5 +318,35 @@
                 }
             }
         }
+    }
+}
+
+.is-show .mv {
+    &__center::after,
+    &__main-photo {
+        opacity: 1;
+        transform: translate(0);
+    }
+
+    &__cutout-photo {
+        opacity: 1;
+        transform-style: preserve-3d; 
+        backface-visibility: hidden;
+    }
+
+    .is-rotate {
+        animation: rotate-phote 1.5s ease 1s forwards;
+    }
+}
+
+@keyframes rotate-phote {
+    0% {
+      transform: rotateY(0deg);
+    }
+    25% {
+      transform: rotateY(90deg);
+    }
+    100% {
+      transform: rotateY(0deg);
     }
 }

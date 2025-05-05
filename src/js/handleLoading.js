@@ -1,5 +1,5 @@
 // ローディング画面の管理
-const handleLoading = () => {
+const handleLoading = (onComplete) => {
     const bodyElement = document.querySelector('body');
     bodyElement.style.opacity = '1';
 
@@ -16,6 +16,9 @@ const handleLoading = () => {
             bodyElement.style.overflow = 'auto';
             bodyElement.classList.add('is-show');
             loading.remove();
+            if (typeof onComplete === 'function') {
+                onComplete();
+            }
         }, 2600);
     });
 };

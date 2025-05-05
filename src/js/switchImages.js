@@ -1,7 +1,6 @@
-
 const mainPhotos = document.querySelectorAll('.collection__main-photos');
 
-export const switchCards = () => {
+const switchImages = () => {
     mainPhotos.forEach(mainPhoto =>  {
         // 現在の要素・次の要素
         const frames = mainPhoto.querySelectorAll('.collection__photo-frame');
@@ -30,3 +29,5 @@ export const switchCards = () => {
         }, 1200);
     });
 }
+
+export { switchImages };

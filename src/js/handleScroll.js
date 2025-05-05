@@ -1,5 +1,5 @@
 // スクロール関連の処理
-export const initScroll = () => {
+const handleScroll = () => {
     // 追従要素の取得
     const followElement = document.querySelector(".js-follow");
     const topTarget = document.querySelector('[data-id="top_target"]');
@@ -38,3 +38,5 @@ export const initScroll = () => {
     // 追従ボタンの表示・非表示を切り替える位置をobserverで監視する
     [topTarget, bottomTarget].forEach((target) => observer.observe(target));
 };
+
+export { handleScroll };

@@ -564,11 +564,13 @@ body {
   &__ttl {
     width: 2360px;
     display: flex;
+    padding-bottom: 3px;
     font-size: 68px;
     font-family: vars.$font-chonburi;
     color: vars.$second-color;
     gap: 50px;
     letter-spacing: -1.5px;
+    animation: scroll-ttl 20s linear infinite;
 
     &--first {
       padding-left: 10px;
@@ -994,5 +996,15 @@ body {
 
   p + p {
     margin-top: 40px;
+  }
+}
+
+// animation
+@keyframes scroll-ttl {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50.9%);
   }
 }

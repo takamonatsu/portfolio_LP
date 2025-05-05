@@ -20,4 +20,4 @@ const handleLoading = () => {
     });
 };
 
-export { handleLoading }
+export { handleLoading };

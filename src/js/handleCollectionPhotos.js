@@ -8,22 +8,31 @@ const switchPhotos  = (mainPhoto) => {
     if (nextIndex >= frames.length) {
         nextIndex = 0; 
     }
-    const next = frames[nextIndex];
+    const nextFrame = frames[nextIndex];
 
     // 一度すべてリセット
     frames.forEach(frame => frame.classList.remove('is-show', 'is-next', 'is-out', 'is-default'));
 
     // クラス付け直し
     currentFrame.classList.remove('is-show');
-    next.classList.remove('is-next');
+    nextFrame.classList.remove('is-next');
 
     currentFrame.classList.add('is-out');
-    next.classList.add('is-show');
+    nextFrame.classList.add('is-show');
     frames[(nextIndex + 1) % frames.length].classList.add('is-next');
+
+    switchLinks(mainPhoto, nextFrame);
 
     setTimeout(function () {
         currentFrame.classList.remove('is-out');
     }, 1200);
+}
+
+const switchLinks = (mainPhoto, nextFrame) => {
+    const freepikLinkElement = mainPhoto.nextElementSibling;
+    const dataLink = nextFrame.dataset.link;
+    const freepikLink = `https://www.freepik.com/${dataLink}`
+    freepikLinkElement.setAttribute('href', freepikLink)
 }
 
 const handleCollectionPhotos  = () => {

@@ -218,8 +218,12 @@
     &__freepik-link {
         margin-top: 15px;
         padding: 0 15px;
+        display: block;
+        position: relative;
         font-size: 9px;
         text-align: right;
+        z-index: 10;
+        text-decoration: underline;
     }
 
     &__about {

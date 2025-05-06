@@ -1,11 +1,11 @@
 // スクロール関連の処理
 const switchFollowElemVisible = () => {
     // 追従要素の取得
-    const followElement = document.querySelector(".js-follow");
+    const followElements = document.querySelectorAll(".js-follow");
     const topTarget = document.querySelector('[data-id="top_target"]');
     const bottomTarget = document.querySelector('[data-id="bottom_target"]');
 
-    if (!followElement || !topTarget || !bottomTarget) return;
+    if (!followElements || !topTarget || !bottomTarget) return;
 
     // 状態を管理するオブジェクト
     const boolObj = {
@@ -28,11 +28,13 @@ const switchFollowElemVisible = () => {
         });
 
         // 追従ボタンの表示・非表示を切り替える
-        if (boolObj.top_target && !boolObj.bottom_target) {
-            followElement.classList.add("is-show");
-        } else {
-            followElement.classList.remove("is-show");
-        }
+        followElements.forEach(followElement => {
+            if (boolObj.top_target && !boolObj.bottom_target) {
+                followElement.classList.add("is-show");
+            } else {
+                followElement.classList.remove("is-show");
+            }
+        });
     });
 
     // 追従ボタンの表示・非表示を切り替える位置をobserverで監視する

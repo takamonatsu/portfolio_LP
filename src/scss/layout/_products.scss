@@ -15,27 +15,35 @@
     }
 
     &__contents {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+        @include mq(pc) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__left-side {
+        @include mq(pc) {
+            flex-shrink: 0;
+            width: 20%;
+            max-width: 270px;
+        }
     }
 
     &__ttl {
-        width: 270px;
         font-size: 24px;
         font-family: vars.$font-chonburi;
         text-align: center;
-        flex-shrink: 0;
-    }
-
-    &__frame {
-        width: 1010px;
-        overflow-x: scroll;
-        overflow-y: hidden;
     }
 
     &__list {
+        margin-top: 30px;
         display: flex;
+        justify-content: space-between;
+
+        @include mq(pc) {
+            margin-top: 0;
+        }
     }
 
     &__item {
@@ -51,13 +59,13 @@
     &__btn {
         width: 150px;
         height: 32px;
-        margin: 20px auto 0;
+        margin: 10px auto 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: vars.$brown;
-        background-color: vars.$white;
         font-size: 14px;
+        font-family: Chonburi, sans-serif;
+        color: vars.$brown;
         border-radius: 20px;
         border: 1px solid vars.$brown;
         box-shadow: 0 4px 4px vars.$shadow-color;

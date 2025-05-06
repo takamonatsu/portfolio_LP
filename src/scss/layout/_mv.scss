@@ -57,6 +57,11 @@
         background-size: contain;
         background-repeat: no-repeat;
         z-index: 1;
+
+        @include mq(pc) {
+            width: 405px;
+            height: 326px;
+        }
     }
 
     &__ttl {

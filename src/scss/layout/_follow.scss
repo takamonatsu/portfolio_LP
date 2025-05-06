@@ -1,23 +1,121 @@
 // ミックスインファイルのインポート
 @use '../foundation/mixins' as *;
 
-body .logo.follow-logo {
-    display: none;
+body .follow {
+    width: 100vw;
+    max-width: 1600px;
+    height: 80vh;
     position: fixed;
     top: 20%;
-    right: 25px;
-    font-size: 40px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
 
-    &.is-show {
-        opacity: 1;
-        visibility: visible;
+    &__logo.logo {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 40px;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 100;
+        
+        &.is-show {
+            opacity: 1;
+        }
+        
+        @include mq(pc) {
+            display: block;
+        }
     }
 
-    @include mq(pc) {
-        display: block;
+    &__photos {
+        width: 300px;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 25px;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 100;
+    
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        &::before {
+            width: 270px;
+            height: 215px;
+            top: 170px;
+            background-image: url(/src/assets/images/mv_perpar-left.png);
+        }
+    
+        &::after {
+            width: 59px;
+            height: 48px;
+            top: 0px;
+            left: 120px;
+            background-image: url(/src/assets/images/handwritten-sparkling.png);
+        }
+    
+        &.is-show {
+            opacity: 1;
+        }
+
+        @include mq(pc) {
+            display: block;
+        }
     }
-} 
+
+    &__photo {
+        position: absolute;
+        animation: shake-phote 5s linear 1s infinite;
+
+        &--01 {
+            width: 150px;
+            top: 60px;
+            left: -7px;
+            animation-delay: 3s;
+        }
+
+        &--02 {
+            width: 150px;
+            top: 127px;
+            left: 65px;
+            animation-delay: 3.5s;
+        }
+
+        &--03 {
+            width: 230px;
+            top: -30px;
+            right: 0px;
+            z-index: -1;
+            animation-delay: 3.3s;
+        }
+    }
+
+}
+
+
+@keyframes shake-phote {
+    0% {
+        transform: rotate(0deg);
+    }
+    91% {
+        transform: rotate(0deg);
+    }
+    94% {
+        transform: rotate(5deg);
+    }
+    97% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}

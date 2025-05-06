@@ -1,63 +1,77 @@
 // ミックスインファイルのインポート
 @use '../foundation/mixins' as *;
 
-body .logo.follow-logo {
-    display: none;
+body .follow {
+    width: 1600px;
+    height: 80vh;
     position: fixed;
     top: 20%;
-    right: 25px;
-    font-size: 40px;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
 
-    &.is-show {
-        opacity: 1;
-    }
-
-    @include mq(pc) {
-        display: block;
-    }
-}
-
-.follow-photos {
-    width: 300px;
-    display: none;
-    position: fixed;
-    top: 20%;
-    left: 25px;
-    opacity: 0;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 100;
-
-    &::before,
-    &::after {
-        content: "";
+    &__logo.logo {
+        display: none;
         position: absolute;
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-    &::before {
-        width: 270px;
-        height: 215px;
-        top: 170px;
-        background-image: url(/src/assets/images/mv_perpar-left.png);
-    }
-
-    &::after {
-        width: 59px;
-        height: 48px;
-        top: 0px;
-        left: 120px;
-        background-image: url(/src/assets/images/handwritten-sparkling.png);
+        top: 0;
+        right: 25px;
+        font-size: 40px;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 100;
+        
+        &.is-show {
+            opacity: 1;
+        }
+        
+        @include mq(pc) {
+            display: block;
+        }
     }
 
-    &.is-show {
-        opacity: 1;
+    &__photos {
+        width: 300px;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 25px;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 100;
+    
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        &::before {
+            width: 270px;
+            height: 215px;
+            top: 170px;
+            background-image: url(/src/assets/images/mv_perpar-left.png);
+        }
+    
+        &::after {
+            width: 59px;
+            height: 48px;
+            top: 0px;
+            left: 120px;
+            background-image: url(/src/assets/images/handwritten-sparkling.png);
+        }
+    
+        &.is-show {
+            opacity: 1;
+        }
+
+        @include mq(pc) {
+            display: block;
+        }
     }
 
-    .follow-photo {
+    &__photo {
         position: absolute;
         animation: shake-phote 5s linear 1s infinite;
 
@@ -84,10 +98,8 @@ body .logo.follow-logo {
         }
     }
 
-    @include mq(pc) {
-        display: block;
-    }
 }
+
 
 @keyframes shake-phote {
     0% {

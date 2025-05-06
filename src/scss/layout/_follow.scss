@@ -2,7 +2,8 @@
 @use '../foundation/mixins' as *;
 
 body .follow {
-    width: 1600px;
+    width: 100vw;
+    max-width: 1600px;
     height: 80vh;
     position: fixed;
     top: 20%;

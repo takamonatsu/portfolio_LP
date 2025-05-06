@@ -71,6 +71,17 @@ body {
         border-radius: 4px;
         z-index: 10;
     }
+     
+    .push-in:hover {
+        position: relative;
+        box-shadow: inset 2px 2px 4px 2px vars.$shadow-color;
+        transform: translate(0, 1px);
+        z-index: 1;
+
+        &.products__btn {
+            box-shadow: inset 1px 1px 2px 1px vars.$shadow-color;
+        }
+    }
 }
 
 .footer {

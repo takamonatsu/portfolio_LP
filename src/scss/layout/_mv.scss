@@ -20,54 +20,28 @@
         position: relative;
         font-family: vars.$font-chonburi;
         color: transparent;
-        background-color: vars.$bg-mv;
-        box-shadow: 20px 20px 16px vars.$shadow-color;
-
-        @include mq(pc) {
-            width: calc(100% - 40px);
-            height: 800px;
-            padding: 30px;
-            margin: 0 auto;
-        }
-    }
-
-    &::after {
-        @include mq(pc) {
-            content: "";
-            width: 675px;
-            height: 330px;
-            position: absolute;
-            bottom: 0;
-            right: 20px;
-            background-image: url(/src/assets/images/vector-yellow.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 1;
-        }
-    }
-
-    &::before {
-        content: "";
-        width: 367px;
-        height: 231px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-image: url(/src/assets/images/vector-pink.png);
+        background-image: url(/src/assets/images/mv_bg_sp.png);
         background-size: contain;
-        background-repeat: no-repeat;
-        z-index: 1;
+        background-position: bottom;
+        background-repeat: repeat-x;
 
         @include mq(pc) {
-            width: 405px;
-            height: 326px;
+            width: 1280px;
+            height: 840px;
+            margin: 0 auto;
+            padding: 30px;
+            background-image: url(/src/assets/images/mv_bg_pc.png);
         }
+    }
+
+    &__logo {
+        margin-left: 15px;
     }
 
     &__ttl {
         width: 339px;
         height: 188px;
-        margin: 165px auto 0;
+        margin: 160px auto 0;
         font-size: 80px;
         background-image: url(/src/assets/images/mv_ttl_sp.png);
         background-size: contain;
@@ -79,7 +53,7 @@
             width: auto;
             position: absolute;
             bottom: -190px;
-            right: -370px;
+            right: -350px;
             font-size: 94px;
             background-image: url(/src/assets/images/mv_ttl_pc.png);
             letter-spacing: -2.82px;

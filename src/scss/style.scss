@@ -106,8 +106,10 @@ body {
     padding: 200px 0 80px;
     text-align: center;
 
-    p+p {
+    .copyright {
         margin-top: 40px;
+        font-size: 12px;
+        font-family: vars.$font-chonburi;
     }
 }
 

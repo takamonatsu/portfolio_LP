@@ -2,6 +2,7 @@
 const switchFollowElemVisible = () => {
     // 追従要素の取得
     const followElements = document.querySelectorAll(".js-follow");
+    // 表示非表示の切り替え位置の要素を取得
     const topTarget = document.querySelector('[data-id="top_target"]');
     const bottomTarget = document.querySelector('[data-id="bottom_target"]');
 
@@ -15,7 +16,9 @@ const switchFollowElemVisible = () => {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
+            // その切り替え位置の要素が表示されているかを確認
             const isVisible = entry.isIntersecting;
+            //その切り替え位置の要素がビューポートの上に存在するかを確認
             let isAboveViewport = entry.boundingClientRect.top < 0;
 
             if (entry.target.dataset.id === "top_target") {
@@ -37,7 +40,7 @@ const switchFollowElemVisible = () => {
         });
     });
 
-    // 追従ボタンの表示・非表示を切り替える位置をobserverで監視する
+    // 追従ボタンの表示・非表示を切り替える位置の要素をobserverで監視する
     [topTarget, bottomTarget].forEach((target) => observer.observe(target));
 };
 

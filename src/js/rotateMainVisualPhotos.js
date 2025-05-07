@@ -1,5 +1,6 @@
 const switchRotateClass = (photo) => {
     if (!photo) return;
+    // .is-rotate のクラス名の切り替えで回転のアニメーションを実行
     photo.classList.add('is-rotate');
     setTimeout(() => {
         photo.classList.remove('is-rotate');
@@ -7,9 +8,11 @@ const switchRotateClass = (photo) => {
 }
 
 const rotateMainVisualPhotos = () => {
+    // メインビジュアル内の切り抜き写真をすべて取得
     const photos = document.querySelectorAll('.mv__cutout-photo');
     if (photos.length === 0) return;
 
+    // それぞれの画像に対して switchRotateClass を実行（1枚のみ時間差で実行）
     photos.forEach((photo, index) => {
         if (index === 0 || index === 2) {
             switchRotateClass(photo); 
